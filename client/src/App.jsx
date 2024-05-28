@@ -35,16 +35,23 @@ function App() {
     setIsModelOpen(true)
        
      }
-  const handleDelete =async (id) =>{
-    console.log(id);
-    const isConfrimed = window.confirm("Are you sure you want to delete this user");
-    if(isConfrimed){
-      await Axios.delete(`http://localhost:8080/api/Delete/${id}`)
-      getAllUsers()
+     const handleDelete = async (value) => {
+      const isConfirm = window.confirm("Are You sure Want to Delete")
   
+      if (isConfirm) {
+        try {
+          await Axios.delete(`http://localhost:8080/api/Delete/${value}`)
+          getAllUsers()
+          
+        }
+        
+        catch (error) {
+          console.log(error)
+        }
+      }
     }
-    
-  }
+  
+
   const handleAddRecord =  () =>{
     
     // await Axios.put("http://localhost:8080/api/Post")

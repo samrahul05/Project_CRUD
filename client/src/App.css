@@ -5,6 +5,7 @@
 }
 .container{
   margin: auto;
+  padding:20px;
 
 }
 
@@ -44,9 +45,13 @@ h1{
 
 .green{
   background-color: rgba(0, 128, 0, 0.767);
+  display: flex;
+  margin: auto;
 }
 .red{
   background-color: rgba(255, 0, 0, 0.795);
+  display: flex;
+  margin: auto;
 }
 table{
   width: 100%;

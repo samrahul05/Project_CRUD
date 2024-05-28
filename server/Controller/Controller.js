@@ -44,13 +44,13 @@ const UpdateData =async(req,res) => {
 
 const DeleteData = async(req,res) =>{
     
-
     try {
-        const deletedData= await User.findOneAndDelete(req.params.id);
+        const deletedData= await User.findByIdAndDelete(req.params.id);
 
-       console.log("DATA:",req.params.id);
+        
         if (deletedData) {
-            res.json({ message: 'Data deleted successfully' });
+           return res.json({ message: 'Data deleted successfully' });
+            
         }
   
         
@@ -58,5 +58,6 @@ const DeleteData = async(req,res) =>{
         res.status(500).json({ message: 'Error deleting data' });
     }
   }
+
 
 module.exports={PostData,GetData,UpdateData,DeleteData}
